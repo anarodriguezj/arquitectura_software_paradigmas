@@ -1,0 +1,15 @@
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\Practice1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\Practice1.AssemblyInfoInputs.cache
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\Practice1.AssemblyInfo.cs
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\Practice1.csproj.CoreCompileInputs.cache
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\Practice1.sourcelink.json
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\bin\Debug\net8.0\Practice1.exe
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\bin\Debug\net8.0\Practice1.deps.json
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\bin\Debug\net8.0\Practice1.runtimeconfig.json
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\bin\Debug\net8.0\Practice1.dll
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\bin\Debug\net8.0\Practice1.pdb
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\Practice1.dll
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\refint\Practice1.dll
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\Practice1.pdb
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\Practice1.genruntimeconfig.cache
+C:\Users\anaro\OneDrive - Universidad Pontificia Comillas\ICAI 3\1º cuatrimestre\paradigmas y tecnicas de programacion\practicas\arquitectura_software_paradigmas\obj\Debug\net8.0\ref\Practice1.dll

@@ -35,7 +35,6 @@
 
             policeCar1.PrintRadarHistory();
             policeCar2.PrintRadarHistory();
-
         }
     }
 }

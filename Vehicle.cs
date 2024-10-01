@@ -16,7 +16,7 @@
         //Override ToString() method with class information
         public override string ToString()
         {
-            return $"{GetTypeOfVehicle()} with plate {GetPlate()}";
+            return $"{GetTypeOfVehicle()} with plate {(GetPlate() ?? "no plate")}";
         }
 
         public string GetTypeOfVehicle()
@@ -28,7 +28,6 @@
         {
             return plate;
         }
-
 
         public float GetSpeed()
         {
@@ -46,3 +45,4 @@
             return $"{this}: {message}";
         }
     }
+}
