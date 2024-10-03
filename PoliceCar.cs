@@ -1,43 +1,56 @@
-﻿using System.Diagnostics.Tracing;
-
-namespace Practice1
+﻿namespace Practice1
 {
     class PoliceCar : Vehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances
-        private const string typeOfVehicle = "Police Car"; 
+        private const string typeOfVehicle = "Police Car";
         private bool isPatrolling;
-        private SpeedRadar speedRadar;
+        private SpeedRadar? speedRadar;
         private bool inPersecution;
         private string? offenderPlate;
         private PoliceStation? station;
 
-        private List<PoliceCar> policeCars = new List<PoliceCar> ();
+        private List<PoliceCar> policeCars = new List<PoliceCar>();
 
-        public PoliceCar(string plate) : base(typeOfVehicle, plate)
+        public PoliceCar(string plate, bool hasRadar = false) : base(typeOfVehicle, plate)
         {
-            isPatrolling = false;            
+            isPatrolling = false;
             inPersecution = false;
             offenderPlate = null;
-            speedRadar = new SpeedRadar();
+
+            if (hasRadar)
+            {
+                speedRadar = new SpeedRadar();
+            }
         }
 
         public void UseRadar(Vehicle vehicle)
         {
-            if (isPatrolling)
+            if (!isPatrolling)
+            {
+                Console.WriteLine(WriteMessage($"is not patrolling and cannot use the radar."));
+                return;
+            }
+            if (speedRadar != null)
             {
                 speedRadar.TriggerRadar(vehicle);
-                string meassurement = speedRadar.GetLastReading();                
-                Console.WriteLine(WriteMessage($"Triggered radar. Result: {meassurement}"));
-                offenderPlate = vehicle.GetPlate();
-                StartPersecution(offenderPlate);
+                string measurement = speedRadar.GetLastReading();
+                Console.WriteLine(WriteMessage($"Triggered radar. Result: {measurement}"));
+
+                var plate = vehicle.GetPlate();
+                var speed = vehicle.GetSpeed();
+                if (speed > speedRadar.GetLegalSpeed())
+                {
+                    StartPersecution(plate);
+                }
+
+                // si es un patinete como lo hago? como persigo a algo sin matricula? o no tengo que perseguirlo?
             }
             else
             {
                 Console.WriteLine(WriteMessage($"has no active radar."));
             }
         }
-        
 
         public void SetPoliceStation(PoliceStation station)
         {
@@ -82,6 +95,7 @@ namespace Practice1
 
         public void PrintRadarHistory()
         {
+            if (speedRadar != null)
             {
                 Console.WriteLine(WriteMessage("Report radar speed history:"));
                 foreach (float speed in speedRadar.SpeedHistory)
@@ -89,11 +103,17 @@ namespace Practice1
                     Console.WriteLine(speed);
                 }
             }
+            else
+            {
+                Console.WriteLine(WriteMessage("There is no radar history in this Police Car."));
+            }
         }
+
+
 
         public void StartPersecution(string offenderPlate)
         {
-            if (!inPersecution && offenderPlate != null)
+            if (!inPersecution)
             {
                 inPersecution = true;
                 this.offenderPlate = offenderPlate;
