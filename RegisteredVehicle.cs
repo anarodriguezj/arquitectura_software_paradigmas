@@ -1,12 +1,12 @@
 ﻿namespace Practice1
 {
-    abstract class Vehicle : IMessageWritter
+    abstract class RegisteredVehicle : IMessageWritter
     {
         private string typeOfVehicle;
         private string plate;
         private float speed;
 
-        public Vehicle(string typeOfVehicle, string plate)
+        public RegisteredVehicle(string typeOfVehicle, string plate)
         {
             this.typeOfVehicle = typeOfVehicle;
             this.plate = plate;

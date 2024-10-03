@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Practice1
 {
-    abstract class UnregisteredVehicle
+    abstract class UnregisteredVehicle : IMessageWritter // vehicle with no plate
     {
         private string typeOfVehicle;
         private float speed;

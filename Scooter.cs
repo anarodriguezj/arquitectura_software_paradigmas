@@ -9,12 +9,11 @@ namespace Practice1
     internal class Scooter : UnregisteredVehicle
     {
         private static string typeOfVehicle = "Scooter";
+        private float speed;
 
-        public Scooter(string? plate) : base(typeOfVehicle)
+        public Scooter() : base(typeOfVehicle)
         {
-
+            speed = 0f;
         }
-
-
     }
 }
