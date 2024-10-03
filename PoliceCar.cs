@@ -18,7 +18,7 @@
             inPersecution = false;
             offenderPlate = null;
 
-            if (hasRadar)
+            if (hasRadar) // Police Car's radar could be null
             {
                 speedRadar = new SpeedRadar();
             }
