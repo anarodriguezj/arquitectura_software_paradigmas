@@ -66,11 +66,6 @@
             if (isLicensed)
             {
                 isLicensed = false;
-                Console.WriteLine(WriteMessage("license has been removed."));
-            }
-            else
-            {
-                Console.WriteLine(WriteMessage("already has its license revoked."));
             }
         }
     }

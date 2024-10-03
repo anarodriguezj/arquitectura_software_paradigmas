@@ -15,13 +15,13 @@
             SpeedHistory = new List<float>();
         }
 
-        public void TriggerRadar(Vehicle vehicle)
+        public void TriggerRadar(RegisteredVehicle vehicle)
         {
             plate = vehicle.GetPlate();
             speed = vehicle.GetSpeed();
             SpeedHistory.Add(speed);
         }
-        
+
         public string GetLastReading()
         {
             if (speed > legalSpeed)
@@ -32,6 +32,11 @@
             {
                 return WriteMessage("Driving legally.");
             }
+        }
+
+        public float GetLegalSpeed()
+        { 
+            return legalSpeed; 
         }
 
         public virtual string WriteMessage(string radarReading)
