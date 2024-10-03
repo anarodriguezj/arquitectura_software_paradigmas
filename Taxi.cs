@@ -1,6 +1,6 @@
 ﻿namespace Practice1
 {
-    class Taxi : Vehicle
+    class Taxi : RegisteredVehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances.
         private static string typeOfVehicle = "Taxi";
@@ -15,9 +15,20 @@
             isLicensed = true;
         }
 
-        public bool IsLicensed()
+        public void SetIsLicensed()
         {
-            return isLicensed;
+            if (!isLicensed)
+            {
+                isLicensed = true;
+            }             
+        }
+
+        public void RemoveLicense()
+        {
+            if (isLicensed)
+            {
+                isLicensed = false;
+            }
         }
 
         public void StartRide()
@@ -58,14 +69,6 @@
             else
             {
                 Console.WriteLine(WriteMessage("is not on a ride."));
-            }
-        }
-
-        public void RemoveLicense()
-        {
-            if (isLicensed)
-            {
-                isLicensed = false;
             }
         }
     }

@@ -43,8 +43,14 @@ namespace Practice1
             }
         }
 
-        public void ActivateAlarm(string offenderPlate)
+        public void ActivateAlarm(string? offenderPlate)
         {
+            if (string.IsNullOrEmpty(offenderPlate))
+            {
+                Console.WriteLine("Error: No se puede activar la alarma porque la placa es nula o vacía.");
+                return;
+            }
+
             if (!activeAlarm)
             {
                 activeAlarm = true;
@@ -58,12 +64,15 @@ namespace Practice1
         }
 
         public void NotifyPoliceCars(string offenderPlate)
-        {
-            foreach (var policeCar in PoliceCarsList)
+        {   
+            if (activeAlarm)
             {
-                if (policeCar.IsPatrolling() && !policeCar.InPersecution())
+                foreach (var policeCar in PoliceCarsList)
                 {
-                    policeCar.StartPersecution(offenderPlate); // all police cars will start the persecution of the offending car
+                    if (policeCar.IsPatrolling() && !policeCar.InPersecution())
+                    {
+                        policeCar.StartPersecution(offenderPlate); // all police cars will start the persecution of the offending car
+                    }
                 }
             }
         }

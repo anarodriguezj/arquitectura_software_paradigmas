@@ -1,6 +1,6 @@
 ﻿namespace Practice1
 {
-    class PoliceCar : Vehicle
+    class PoliceCar : RegisteredVehicle
     {
         //constant string as TypeOfVehicle wont change allong PoliceCar instances
         private const string typeOfVehicle = "Police Car";
@@ -24,7 +24,7 @@
             }
         }
 
-        public void UseRadar(Vehicle vehicle)
+        public void UseRadar(RegisteredVehicle vehicle, PoliceStation policeStation)
         {
             if (!isPatrolling)
             {
@@ -42,6 +42,7 @@
                 if (speed > speedRadar.GetLegalSpeed())
                 {
                     StartPersecution(plate);
+                    policeStation.ActivateAlarm(offenderPlate);
                 }
 
                 // si es un patinete como lo hago? como persigo a algo sin matricula? o no tengo que perseguirlo?
@@ -108,8 +109,6 @@
                 Console.WriteLine(WriteMessage("There is no radar history in this Police Car."));
             }
         }
-
-
 
         public void StartPersecution(string offenderPlate)
         {

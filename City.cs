@@ -21,7 +21,7 @@ namespace Practice1
 
         public override string ToString()
         {
-            return $"City named {GetName()}";
+            return $"City {GetName()}";
         }
 
         public string GetName()
@@ -34,11 +34,11 @@ namespace Practice1
             if (!PoliceStationsList.Contains(policeStation))
             {
                 PoliceStationsList.Add(policeStation);
-                Console.WriteLine(WriteMessage($"Police station {policeStation.GetId()} has been added to {name}."));
+                Console.WriteLine(WriteMessage($"Police Station with ID {policeStation.GetId()} has been added to City {name}."));
             }
             else
             {
-                Console.WriteLine(WriteMessage($"Police station {policeStation.GetId()} is already registered."));
+                Console.WriteLine(WriteMessage($"Police Station with ID {policeStation.GetId()} is already registered."));
             }
         }
 
@@ -47,11 +47,24 @@ namespace Practice1
             if (!TaxisList.Contains(taxi))
             {
                 TaxisList.Add(taxi);
-                Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} has been added to {name}."));
+                Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} has been added to City {name}."));
             }
             else
             {
                 Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} is already registered."));
+            }
+        }
+
+        public void RemovePoliceStation(PoliceStation policeStation)
+        {
+            if (PoliceStationsList.Contains(policeStation))
+            {
+                PoliceStationsList.Remove(policeStation);
+                Console.WriteLine(WriteMessage($"Police Station with ID {policeStation.GetId()} has been removed from City{name}."));
+            }
+            else
+            {
+                Console.WriteLine(WriteMessage($"Police Station with ID {policeStation.GetId()} is not registered."));
             }
         }
 
@@ -60,11 +73,37 @@ namespace Practice1
             if (TaxisList.Contains(taxi))
             {
                 TaxisList.Remove(taxi);
-                Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} has been removed from {name}."));
+                Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} has been removed from City {name}."));
             }
             else
             {
                 Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} is not registered."));
+            }
+        }
+
+        public void RegisterTaxiLicense(Taxi taxi)
+        {
+            if (TaxisList.Contains(taxi))
+            {
+                taxi.SetIsLicensed();
+                Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} has has been registered in City {name}."));
+            }
+            else
+            {
+                Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} is not registered in City {name} and cannot have its license registered."));
+            }
+        }
+
+        public void RemoveTaxiLicense(Taxi taxi)
+        {
+            if (TaxisList.Contains(taxi))
+            {
+                taxi.RemoveLicense();
+                Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} has had its license removed in City {name}."));
+            }
+            else
+            {
+                Console.WriteLine(WriteMessage($"Taxi with plate {taxi.GetPlate()} is not registered in City {name} and cannot have its license removed."));
             }
         }
 
